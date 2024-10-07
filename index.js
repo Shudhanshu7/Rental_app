@@ -14,10 +14,10 @@ app.use(express.json());
 app.use(express.static('public'));
 
 /* Routes */
-app.use("/auth",authRoutes)
-app.use("/properties",listingRoutes)
-app.use("/bookings", bookingRoutes)
-app.use("/users", userRoutes)
+app.use("/api/auth",authRoutes)
+app.use("/api/properties",listingRoutes)
+app.use("/api/bookings", bookingRoutes)
+app.use("/api/users", userRoutes)
 
 /*Mongoose setup*/
 const PORT = process.env.PORT || 3001;
