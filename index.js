@@ -22,12 +22,13 @@ app.use("/api/users", userRoutes)
 /*Mongoose setup*/
 const PORT = process.env.PORT || 3001;
 mongoose.connect(process.env.MONGO_URL, {
-    dbName : "Dream_Nest",
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
-  })
-  .catch((err) => console.log(`${err}did not connect`));
+  dbName: "Dream_Nest",  // Specify database name explicitly here
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => {
+  console.log("Successfully connected to MongoDB");
+  app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
+})
+.catch((err) => console.log(`MongoDB connection error: ${err.message}`));
 
