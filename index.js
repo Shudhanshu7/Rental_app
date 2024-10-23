@@ -4,6 +4,11 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv").config();
 const cors = require("cors");
 
+app.get('/', (req, res) => {
+  res.send("Welcome to the Home Renting API");
+});
+
+
 const authRoutes = require("./routes/auth.js")
 const listingRoutes = require("./routes/listing.js")
 const bookingRoutes = require("./routes/booking.js")
